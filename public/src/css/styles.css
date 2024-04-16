@@ -1,0 +1,294 @@
+:root {
+    --green-00: #e3ff37;
+    --purple-04: #222044;
+    --white: white;
+    --purple-02: #622aff;
+    --green-01: #8ad22e;
+    --green-02: #169f00;
+    --purple-03: #28248c;
+    --deep-pink: #ed47a4;
+    --border-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="5" height="5"><path d="M2 1 h1 v1 h-1 z M1 2 h1 v1 h-1 z M3 2 h1 v1 h-1 z M2 3 h1 v1 h-1 z" fill="rgb(33,37,41)"/></svg>');
+}
+
+body {
+    background-color: var(--purple-02);
+    padding-bottom: 0;
+    scrollbar-width: thin;          /* "auto" or "thin" */
+    scrollbar-color: blue orange;   /* scroll thumb and track */
+}
+
+/* ---- CABECERA Y TITULOS ---- */
+.header-container {
+    display: flex;
+    align-items: center; /* Alinea verticalmente la imagen y el texto */
+    justify-content: center; /* Centra horizontalmente en la página */
+    text-align: center;
+}
+
+.header-title-img {
+    max-width: 100px; /* Ajusta esto según el tamaño deseado de tu imagen */
+    margin-right: 20px; /* Añade un espacio entre la imagen y el texto */
+}
+
+.header-text-container {
+    display: flex;
+    flex-direction: column; /* Apila el título y el subtítulo verticalmente */
+}
+
+.header-title {
+    font-weight: bold;
+    margin: 0; /* Remueve el margen por defecto de span si es necesario */
+
+    display: block; /* Cambia el span a un elemento de bloque para permitir centrado y tamaño completo */
+    text-align: center; /* Centra el texto horizontalmente */
+    margin-top: 10px; /* Añade espacio en la parte superior */
+
+    color: var(--white);
+    text-shadow: 0 8px 0 var(--purple-03);
+    font-family: "Press Start 2P", system-ui;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 42px;
+}
+
+.header-sub-title {
+    font-size: 18px;
+    color: #666;
+    margin: 0;
+}
+
+/* ---- CONTENEDOR PRINCIPAL ---- */
+.title {
+    display: table;
+    padding: 0 .5rem;
+    margin: -1.8rem 0 1rem;
+    font-size: 1rem;
+    background-color: #fff;
+}
+
+.sub-title {
+    display: table;
+    padding: 0 .5rem;
+    margin: -1.8rem 0 1rem;
+    font-size: .775rem;
+    background-color: #fff;
+}
+
+
+.header-title {
+
+}
+
+.header-sub-title{
+    display: block;
+    text-align: center;
+    color: var(--white);
+    text-shadow: 0 8px 0 var(--purple-03);
+    font-family: "Silkscreen", sans-serif;
+    font-style: normal;
+    font-size: 24px;
+}
+
+.container {
+    position: relative;
+    width: 600px !important;
+    height: 790px !important;
+    margin-left: 30%;
+}
+
+.box {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s, z-index 0s 0.5s;
+    border-radius: 9px 9px 9px 9px;
+    -moz-border-radius: 9px 9px 9px 9px;
+    -webkit-border-radius: 9px 9px 9px 9px;
+    border: 0px solid #000000;
+
+}
+
+.box.front {
+    z-index: 2;
+    transform: translateX(0%);
+    -webkit-box-shadow: 11px 9px 20px -7px rgba(0,0,0,0.29);
+    -moz-box-shadow: 11px 9px 20px -7px rgba(0,0,0,0.29);
+    box-sizing: border-box;
+    clip-path: polygon(/* top left */ 0 16px, 16px 16px, 16px 0, /* top right */ calc(100% - 16px) 0, calc(100% - 16px) 16px, 100% 16px, /* bottom right */ 100% calc(100% - 16px), calc(100% - 16px) calc(100% - 16px), calc(100% - 16px) 100%, /* bottom left */ 16px 100%, 16px calc(100% - 16px), 0 calc(100% - 16px));
+    box-shadow: inset -8px -8px 0px rgba(0, 0, 0, 0.2);
+}
+
+.box.back {
+    z-index: 1;
+    transform: translateX(40%) translateY(1%) scale(0.9);
+    box-sizing: border-box;
+    clip-path: polygon(/* top left */ 0 16px, 16px 16px, 16px 0, /* top right */ calc(100% - 16px) 0, calc(100% - 16px) 16px, 100% 16px, /* bottom right */ 100% calc(100% - 16px), calc(100% - 16px) calc(100% - 16px), calc(100% - 16px) 100%, /* bottom left */ 16px 100%, 16px calc(100% - 16px), 0 calc(100% - 16px));
+    box-shadow: inset -8px -8px 0px rgba(0, 0, 0, 0.2);
+}
+
+/* ---- PUBLICIDAD GOOGLE ADS ---- */
+.sidebar-ad {
+    display: flex;
+    flex-direction: column; /* Esto apila los elementos hijos verticalmente */
+    justify-content: center; /* Esto centra el contenido verticalmente */
+    align-items: center; /* Esto centra el contenido horizontalmente */
+    position: fixed;
+    width:  200px; /* Ajusta el ancho según sea necesario */
+    height: 600px; /* Ajusta la altura según sea necesario */
+    background-color: #f4f4f4; /* Color de fondo para los anuncios */
+    border: 1px solid #ccc; /* Bordes sutiles para los anuncios */
+    text-align: center;
+}
+
+.sidebar-ad.left {
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centra verticalmente el anuncio */
+    border-radius: 9px 9px 9px 9px;
+}
+
+.sidebar-ad.right {
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%); /* Centra verticalmente el anuncio */
+    border-radius: 9px 9px 9px 9px;
+}
+
+.sidebar-text-2xs {
+    font-family: Poppins, sans-serif;
+    font-size: .625rem;
+    font-weight: 500;
+    line-height: 1;
+    width:100%;
+}
+
+.sidebar-text-3xs {
+    font-size: .575rem;
+    width:100%;
+}
+
+/* ---- custom UI ---- */
+
+.nes-container {
+    margin: 5px 10px auto !important;
+    font-size: .575rem;
+}
+
+.nes-field {
+    display: flex; /* Esto habilita flexbox */
+    align-items: center; /* Esto alinea los elementos secundarios verticalmente */
+}
+
+.nes-input {
+    flex-grow: 1; /* Esto permitirá que el input crezca y ocupe el espacio disponible */
+    margin-right: .5em; /* Añade un poco de margen entre el input y el botón */
+    border-image-slice: 2;
+    border-image-repeat: stretch;
+    border-image-source: var(--border-image);
+    width: calc(100% - 8px);
+    padding: .5rem 1rem;
+    background-clip: padding-box;
+}
+
+.nes-btn {
+    white-space: nowrap; /* Asegura que el texto del botón no se pase a la línea siguiente */
+    border-image-slice: 2;
+    border-image-repeat: stretch;
+    border-image-source: var(--border-image);
+}
+
+.tab-active {
+    border-bottom: 2px solid blue;
+}
+
+.active-tab {
+    display: block;
+}
+
+#tabs {
+    font-size: .575rem;
+    margin: 0 8px 0 8px;
+}
+
+.nes-table {
+    font-size: .575rem;
+}
+
+.body-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: .8rem;
+    margin-top: -2px;
+    margin-bottom: -2px;
+}
+
+.img-table {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80px;
+}
+
+.img-table-clock {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table-centered{
+    width: 98%;
+}
+
+.table-centered td {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.footer-btn {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.close-btn {
+    position: absolute; /* Posicionamiento absoluto respecto a su contenedor relativo */
+    top: 0; /* Alinea el botón en la parte superior del div */
+    right: 0; /* Alinea el botón a la derecha del div */
+}
+
+.custom-badge {
+    position: absolute;
+    top: -11px;
+    left: 25%;
+}
+
+.img-land-empty {
+    width: 400px;
+    margin: auto;
+}
+
+.land-footer-info {
+    position: absolute;
+    left: 0px;
+    margin-left: 5px;
+}
+
+
+.land-btn {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.img-modal {
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: auto;
+        margin-right: auto;
+}
+
+.modal-small-text {
+    font-size: .575rem;
+}

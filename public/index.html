@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scheduler Pixels</title>
+        <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
+        <link rel="stylesheet" href="src/css/styles.css" />
+        <link rel="stylesheet" href="src/css/bg-animation.css" />
+        <link rel="stylesheet" href="src/plugins/font-awesome-4.7.0/css/font-awesome.min.css" />
+        <script src="https://cdn.tailwindcss.com/3.4.3"></script>
+    </head>
+    <body>
+        <!--FONDO ANIMADO CSS-->
+        <div class="area">
+            <!-- INIT - Google Ads -->
+            <div id="left-ad" class="sidebar-ad left">
+                <div class="sidebar-text-2xs">Ad</div>
+                <div class="sidebar-text-3xs">Support us by disabling AdBlock ♥</div>
+            </div>
+            <div id="right-ad" class="sidebar-ad right">
+                <div class="sidebar-text-2xs">Ad</div>
+                <div class="sidebar-text-3xs">Support us by disabling AdBlock ♥</div>
+            </div>
+			<!-- END  - Google Ads -->
+
+			<div class="header-container">
+                <img src="src/img/headerTitleImg.png" class="header-title-img" alt="Scheduler Pixels" />
+                <div class="header-text-container">
+                    <span class="header-title">Scheduler Pixels</span>
+                    <span class="header-sub-title">A simple way to organize your farm</span>
+                </div>
+            </div>
+
+            <div class="container">
+                <div id="box1" class="box front" style="background: #74e291;">
+                    <br />
+                    <div class="nes-container title with-title is-centered is-rounded">
+                        <p class="title">Welcome to the schedulerPixels</p>
+                        <p>¡Domina el mundo de Pixels con SchedulerPixels! 🎮🌱 Planifica, planta y cosecha sin estrés. ¡Sé el héroe de tu propia tierra pixelada!</p>
+                        <br />
+                        <p>En SchedulerPixels te avisaremos cuando tus cultivos estén listos para ser cosechados</p>
+                    </div>
+                    <br />
+                    <div class="nes-container with-title is-rounded">
+                        <p class="sub-title">Buscar Lands</p>
+                        <div class="nes-field">
+                            <label for="lands"></label>
+                            <input type="number" class="nes-input" id="lands" max="5000" min="1" placeholder="Busca tu lands del 1 al 5000" required />
+                            <button type="button" class="nes-btn is-disabled" onclick="exploreLand()" id="exploreButton" disabled>Explorar</button>
+                        </div>
+                    </div>
+                    <br />
+                    <div id="tabs" class="flex flex-col">
+                        <!-- Tabs navigation -->
+                        <div class="flex">
+                            <button class="tab w-full flex items-center gap-x-2 justify-center font-medium border bg-white text-gray-800 border-gray-200 hover:bg-gray-100" onclick="changeTab(0)">
+                                <i class="fa fa-chevron-circle-left fa-2x" aria-hidden="true"></i>
+                                PrevLand
+                            </button>
+                            <button class="tab tab-active w-full flex justify-center font-medium px-5 py-2 border-t border-b bg-gray-900 text-white border-gray-900 hover:bg-gray-800" onclick="changeTab(1)">
+                                🌱 Land 🌱
+                            </button>
+                            <button class="tab w-full flex items-center gap-x-2 justify-center font-medium border bg-white text-gray-800 border-gray-200 hover:bg-gray-100" onclick="changeTab(2)">
+                                NextLand
+                                <i class="fa fa-chevron-circle-right fa-2x" aria-hidden="true"></i>
+                            </button>
+                        </div>
+						<!-- Tabs content -->
+                        <div id="prevLandsTab" class="tab-content p-4" style="display: none;">
+                        </div>
+                        <div id="currentLandsTab" class="tab-content p-4 active-tab">
+                          <img class="img-land-empty" src="src/img/granjero.png" alt="granjero"/>
+                        </div>
+                        <div id="nextLandsTab" class="tab-content p-4" style="display: none;">
+
+                        </div>
+                    </div>
+                </div>
+                <div id="box2" class="box back" style="background: #e493b3;">
+                    <br />
+                    <div class="nes-container is-rounded">
+                        <h2 class="title">Land: Terraville</h2>
+                        <button class="nes-btn is-disabled close-btn disable">X</button>
+                        <i class="fa fa-2x fa-hand-o-right" aria-hidden="true"></i> Presiona sobre cada icono para iniciar el tiempo de cosecha. Te avisaremos cuando el reloj regrese termine de contar.
+                        <table class="nes-table is-bordered is-centered table-centered">
+                            <thead>
+                                <tr>
+                                    <th id="terraville-time-coop">00:00</th>
+                                    <th id="terraville-time-apiary">00:00</th>
+                                    <th id="terraville-time-mine">00:00</th>
+                                    <th id="terraville-time-sluggery">00:00</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <button onclick="startCountdown('terraville-time-coop', this.dataset.time, {landNumber: 'TerraVille', activity: 'coop'})" class="nes-btn land-btn btn-success" data-time="30"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_aviculture.png" /></button>
+                                    </td>
+                                    <td>
+                                        <button onclick="startCountdown('terraville-time-apiary', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="2700"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_beekeeping.png" /></button>
+                                    </td>
+                                    <td>
+                                        <button onclick="startCountdown('terraville-time-mine', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="7200"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_mining.png" /></button>
+                                    </td>
+                                    <td>
+                                        <button onclick="startCountdown('terraville-time-sluggery', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="3600"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_slugger.png" /></button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+			<!-- INIT - BG Animation -->
+            <ul class="circles">
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+			<!-- END - BG Animation -->
+  			<dialog class="nes-dialog is-rounded" id="dialog-rounded">
+    <form method="dialog">
+      <p class="title">¡Es hora de cosechar!</p>
+		<span id="modal-content">
+			<p>Apresurate, la cosecha ya está lista.</p>
+
+		</span>
+		<br>
+		<p class="modal-small-text">¡Oye, si has leído mi mensaje, presiona el botón "Está bien" para detener la música!</p>
+      <menu class="dialog-menu">
+        <button onclick="stopSound()" class="nes-btn is-primary">Está bien</button>
+      </menu>
+    </form>
+  </dialog>
+		</div>
+        <script src="src/js/animation.js"></script>
+        <script src="src/js/main.js"></script>
+		<script src="src/js/storage.js"></script>
+    </body>
+</html>
