@@ -130,3 +130,4 @@ dist
 .pnp.*
 /.idea/
 /.idea/sonarlint/issuestore/0/d/0d584cf1fc95d7a542d3fb86e0e73595c536092a
+.vercel
