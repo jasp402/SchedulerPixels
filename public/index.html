@@ -134,9 +134,8 @@
   			<dialog class="nes-dialog is-rounded" id="dialog-rounded">
     <form method="dialog">
       <p class="title">¡Es hora de cosechar!</p>
+		<p>Apresurate, la cosecha ya está lista.</p>
 		<span id="modal-content">
-			<p>Apresurate, la cosecha ya está lista.</p>
-
 		</span>
 		<br>
 		<p class="modal-small-text">¡Oye, si has leído mi mensaje, presiona el botón "Está bien" para detener la música!</p>
@@ -146,6 +145,19 @@
     </form>
   </dialog>
 		</div>
+				 <script>
+			if ('serviceWorker' in navigator) {
+				window.addEventListener('load', () => {
+					navigator.serviceWorker.register('src/js/sw.js')
+							.then(registration => {
+								console.log('Service Worker registrado exitosamente:', registration);
+							})
+							.catch(error => {
+								console.error('Error al registrar el Service Worker:', error);
+							});
+				});
+			}
+		  </script>
         <script src="src/js/animation.js"></script>
         <script src="src/js/main.js"></script>
 		<script src="src/js/storage.js"></script>
