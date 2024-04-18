@@ -129,29 +129,52 @@ body {
 /* ---- PUBLICIDAD GOOGLE ADS ---- */
 .sidebar-ad {
     display: flex;
-    flex-direction: column; /* Esto apila los elementos hijos verticalmente */
-    justify-content: center; /* Esto centra el contenido verticalmente */
-    align-items: center; /* Esto centra el contenido horizontalmente */
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     position: fixed;
-    width:  200px; /* Ajusta el ancho según sea necesario */
-    height: 600px; /* Ajusta la altura según sea necesario */
-    background-color: #f4f4f4; /* Color de fondo para los anuncios */
-    border: 1px solid #ccc; /* Bordes sutiles para los anuncios */
+    width:  200px;
+    height: 200px;
     text-align: center;
 }
 
 .sidebar-ad.left {
+    background-image: url('../img/hud_corner_left.png');
+    background-size: 200px 200px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .6));
+    border-bottom-right-radius: 120px;
+    pointer-events: auto;
     left: 0;
-    top: 50%;
-    transform: translateY(-50%); /* Centra verticalmente el anuncio */
-    border-radius: 9px 9px 9px 9px;
+    top: 0;
 }
 
 .sidebar-ad.right {
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%); /* Centra verticalmente el anuncio */
-    border-radius: 9px 9px 9px 9px;
+    background-image: url(../img/hud_corner_right.png);
+    background-size: 200px 200px;
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    width: 250px;
+    height: 250px;
+    filter: drop-shadow(2px 2px 2px rgba(0, 0, 0, .6));
+    border-bottom-right-radius: 120px;
+    pointer-events: auto;
+    right: -47px;
+    top: 0;
+}
+
+.sidebar-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 60%;
+}
+.nes-progress {
+    height: 30px;
+    background-color: #e3ff37;
 }
 
 .sidebar-text-2xs {
