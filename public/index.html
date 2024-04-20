@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>🗓️ Scheduler Pixels</title>
         <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3408674098811230" crossorigin="anonymous"></script>
-		<link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+        <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
         <link href="https://fonts.googleapis.com/css2?family=Jersey+10+Charted&family=Press+Start+2P&family=Silkscreen:wght@400;700&display=swap" rel="stylesheet" />
@@ -17,20 +17,21 @@
     <body>
         <!--FONDO ANIMADO CSS-->
         <div class="area">
-            <!-- INIT - Google Ads -->
+
+            <!-- CS: Control Panel -->
             <div id="left-ad" class="sidebar-ad left">
-               <progress class="nes-progress is-warning sidebar-bar" value="100" max="100">
-				   100 /  infinite
-				   <span class="sidebar-text-2xs"></span>
-			   </progress>
+                <progress class="nes-progress is-warning sidebar-bar" value="100" max="100">
+                    100 / infinite
+                    <span class="sidebar-text-2xs"></span>
+                </progress>
             </div>
             <div id="right-ad" class="sidebar-ad right">
                 <div class="sidebar-text-2xs"></div>
                 <div class="sidebar-text-3xs"></div>
             </div>
-			<!-- END  - Google Ads -->
 
-			<div class="header-container">
+			<!-- CS: Header (Title & subTitle)  -->
+            <div class="header-container">
                 <img src="src/img/headerTitleImg.png" class="header-title-img" alt="Scheduler Pixels" />
                 <div class="header-text-container">
                     <span class="header-title">Scheduler Pixels</span>
@@ -38,6 +39,7 @@
                 </div>
             </div>
 
+			<!-- CS: Main Content -->
             <div class="container">
                 <div id="box1" class="box front" style="background: #74e291;">
                     <br />
@@ -73,14 +75,11 @@
                             </button>
                         </div>
 						<!-- Tabs content -->
-                        <div id="prevLandsTab" class="tab-content p-4" style="display: none;">
-                        </div>
+                        <div id="prevLandsTab" class="tab-content p-4" style="display: none;"></div>
                         <div id="currentLandsTab" class="tab-content p-4 active-tab">
-                          <img class="img-land-empty" src="src/img/granjero.png" alt="granjero"/>
+                            <img class="img-land-empty" src="src/img/granjero.png" alt="granjero" />
                         </div>
-                        <div id="nextLandsTab" class="tab-content p-4" style="display: none;">
-
-                        </div>
+                        <div id="nextLandsTab" class="tab-content p-4" style="display: none;"></div>
                     </div>
                 </div>
                 <div id="box2" class="box back" style="background: #e493b3; overflow-y: scroll;">
@@ -101,16 +100,44 @@
                             <tbody>
                                 <tr>
                                     <td>
-                                        <button id="btn-terraville-time-coop"  onclick="startCountdown('terraville-time-coop', this.dataset.time, {landNumber: 'TerraVille', activity: 'coop'})" class="nes-btn land-btn btn-success" data-time="3600"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_aviculture.png" /></button>
+                                        <button
+												id="btn-terraville-time-coop"
+												onclick="startCountdown('terraville-time-coop', this.dataset.time, {landNumber: 'TerraVille', activity: 'coop'})"
+												class="nes-btn land-btn btn-success"
+												data-time="3600"
+										>
+                                            <img class="img-table-clock" src="src/img/skills_icon_aviculture.png" />
+                                        </button>
                                     </td>
                                     <td>
-                                        <button id="btn-terraville-time-apiary"  onclick="startCountdown('terraville-time-apiary', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="2700"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_beekeeping.png" /></button>
+                                        <button
+												id="btn-terraville-time-apiary"
+												onclick="startCountdown('terraville-time-apiary', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})"
+												class="nes-btn land-btn btn-success"
+												data-time="2700"
+										>
+                                            <img class="img-table-clock" src="src/img/skills_icon_beekeeping.png" />
+                                        </button>
                                     </td>
                                     <td>
-                                        <button id="btn-terraville-time-mine"  onclick="startCountdown('terraville-time-mine', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="5400"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_mining.png" /></button>
+                                        <button
+												id="btn-terraville-time-mine"
+												onclick="startCountdown('terraville-time-mine', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})"
+												class="nes-btn land-btn btn-success"
+												data-time="5400"
+										>
+                                            <img class="img-table-clock" src="src/img/skills_icon_mining.png" />
+                                        </button>
                                     </td>
                                     <td>
-                                        <button id="btn-terraville-time-sluggery" onclick="startCountdown('terraville-time-sluggery', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})" class="nes-btn land-btn btn-success" data-time="3600"><img class="img-table-clock" src="https://d31ss916pli4td.cloudfront.net/game/ui/skills/skills_icon_slugger.png" /></button>
+                                        <button
+												id="btn-terraville-time-sluggery"
+												onclick="startCountdown('terraville-time-sluggery', this.dataset.time, {landNumber: 'TerraVille', activity: 'apiary'})"
+												class="nes-btn land-btn btn-success"
+												data-time="3600"
+										>
+                                            <img class="img-table-clock" src="src/img/skills_icon_slugger.png" />
+                                        </button>
                                     </td>
                                 </tr>
                             </tbody>
@@ -119,7 +146,27 @@
                 </div>
             </div>
 
-			<!-- INIT - BG Animation -->
+			<!-- CS: Footer -->
+            <div class="daily-gift">
+                <div class="nes-container is-rounded grumpsBox">
+                    <h2 class="sub-title">Daily Grumps</h2>
+                    <div class="header-gift">
+                        <img class="gift1" src="./src/img/grumps.png" alt="Grumps" />
+                        <p id="terraville-time-grumps">¡Recoge tu regalo diario! 🎁</p>
+                    </div>
+                    <button id="btn-terraville-time-grumps" class="nes-btn is-primary" onclick="startCountdown('terraville-time-grumps', this.dataset.time,  {landNumber: 'terraville', activity: 'coop'})" data-time="86400">Collected</button>
+                </div>
+                <div class="nes-container is-rounded candyBox">
+                    <h2 class="sub-title">Daily Candy</h2>
+                    <div class="header-gift">
+                        <img class="gift2" src="./src/img/candy.png" alt="Candy" />
+                        <p id="terraville-time-candy">¡Recoge tu regalo diario! 🎁</p>
+                    </div>
+                    <button  id="btn-terraville-time-candy"  class="nes-btn is-primary" onclick="startCountdown('terraville-time-candy', this.dataset.time, {landNumber: 'terraville', activity: 'candy'})" data-time="86400">Collected</button>
+                </div>
+            </div>
+
+			<!-- CS: BG Animation -->
             <ul class="circles">
                 <li></li>
                 <li></li>
@@ -132,40 +179,40 @@
                 <li></li>
                 <li></li>
             </ul>
-			<!-- END - BG Animation -->
-  			<dialog class="nes-dialog is-rounded" id="dialog-rounded">
-    <form method="dialog">
-      <p class="title">¡Es hora de cosechar!</p>
-		<p>Apresurate, la cosecha ya está lista.</p>
-		<span id="modal-content">
-		</span>
-		<br>
-		<p class="modal-small-text">¡Oye, si has leído mi mensaje, presiona el botón "Está bien" para detener la música!</p>
-      <menu class="dialog-menu">
-        <button onclick="stopSound()" class="nes-btn is-primary">Está bien</button>
-      </menu>
-    </form>
-  </dialog>
-		</div>
-				 <script>
-			if ('serviceWorker' in navigator) {
-				window.addEventListener('load', () => {
-					navigator.serviceWorker.register('src/js/sw.js')
-							.then(registration => {
-								console.log('Service Worker registrado exitosamente:', registration);
+
+            <dialog class="nes-dialog is-rounded" id="dialog-rounded">
+                <form method="dialog">
+                    <p class="title">¡Es hora de cosechar!</p>
+                    <p>Apresurate, la cosecha ya está lista.</p>
+                    <span id="modal-content"> </span>
+                    <br />
+                    <p class="modal-small-text">¡Oye, si has leído mi mensaje, presiona el botón "Está bien" para detener la música!</p>
+                    <menu class="dialog-menu">
+                        <button onclick="stopSound()" class="nes-btn is-primary">Está bien</button>
+                    </menu>
+                </form>
+            </dialog>
+        </div>
+        <script>
+            if ("serviceWorker" in navigator) {
+				window.addEventListener("load", () => {
+					navigator.serviceWorker
+							.register("src/js/sw.js")
+							.then((registration) => {
+								console.log("Service Worker registrado exitosamente:", registration);
 							})
-							.catch(error => {
-								console.error('Error al registrar el Service Worker:', error);
+							.catch((error) => {
+								console.error("Error al registrar el Service Worker:", error);
 							});
 				});
 			}
-		  </script>
-		<script>
-  window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
-</script>
-<script defer src="/_vercel/insights/script.js"></script>
+        </script>
+        <script>
+  			window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };
+        </script>
+        <script defer src="/_vercel/insights/script.js"></script>
         <script src="src/js/animation.js"></script>
         <script src="src/js/main.js"></script>
-		<script src="src/js/storage.js"></script>
+        <script src="src/js/storage.js"></script>
     </body>
 </html>

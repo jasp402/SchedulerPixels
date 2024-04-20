@@ -315,3 +315,49 @@ body {
 .modal-small-text {
     font-size: .575rem;
 }
+
+/* Daily-Gift */
+.daily-gift {
+    display: flex;
+    left: 10px;
+    justify-content: center; /* Espacia los elementos de forma uniforme */
+    align-items: center;
+    margin: 0 auto;
+    padding: 0;
+    width: 550px;
+    z-index: 100;
+    position: absolute;
+    bottom: 5px;
+}
+
+.daily-gift {
+    margin-left: 5px;
+}
+
+.grumpsBox {
+    width: 255px;
+    height: 177px;
+}
+
+.candyBox{
+    width: 255px;
+    height: 177px;
+}
+
+.header-gift {
+    color: var(--white);
+    display: flex;   /* Habilita Flexbox */
+    align-items: center; /* Centra los elementos verticalmente */
+    justify-content: space-around;
+}
+
+.header-gift p{
+    margin-left: 10px;
+}
+
+.daily-gift button {
+    display: block; /* Hace que el botón ocupe su propia línea */
+    width: 100%;    /* Ocupa todo el ancho disponible */
+    margin-top: 20px; /* Espacio entre el contenedor y el botón */
+}
+
